@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Survey Form</title>
+  </head>
+
+  <body>
+    <h1 id="title">Mosaic Survey Form</h1>
+    <p id="description">
+      Thank you for taking the time to help us improve the platform
+    </p>
+
+    <form id="survey-form" method="POST" action="http://localhost:3001/submit">
+      <label id="name-label" for="name">Name</label>
+      <input
+        id="name"
+        name="name"
+        type="text"
+        placeholder="Enter your name"
+        required
+      />
+      <br />
+      <label id="email-label" for="email">Email</label>
+      <input
+        id="email"
+        name="email"
+        type="email"
+        placeholder="Enter your email"
+        required
+      />
+      <br />
+      <label id="number-label" for="number">Age(optional)</label>
+      <input
+        id="number"
+        name="age"
+        type="number"
+        placeholder="Age"
+        min="10"
+        max="100"
+      />
+      <br /><br />
+
+      <label for="dropdown"
+        >What sector does your business currently operate in?</label
+      >
+      <br />
+      <select name="sector" id="dropdown">
+        <option value="" selected disabled>Select sector</option>
+        <option value="food-beverage">Food and Beverage</option>
+        <option value="accommodation">Accommodation</option>
+        <option value="retail">Retail</option>
+        <option value="entertainment">Entertainment</option>
+      </select>
+      <br /><br />
+
+      <label for="recommend"> Would you recommend Mosaic to a friend?</label>
+      <br />
+      <input
+        id="definitely-option"
+        type="radio"
+        name="recommend"
+        value="definitely"
+        checked
+      />
+      <label for="definitely-option">Definitely</label>
+      <input id="maybe-option" type="radio" name="recommend" value="maybe" />
+      <label for="maybe-option">Maybe</label>
+      <input
+        id="not-sure-option"
+        type="radio"
+        name="recommend"
+        value="not-sure"
+      />
+      <label for="not-sure-option">Not sure</label>
+      <br /><br />
+
+      <label for="favorite">What is your favorite feature of Mosaic?</label>
+      <br />
+      <select name="favorite" id="favorite">
+        <option value="" selected disabled>Select an option</option>
+        <option value="order">Order</option>
+        <option value="customization">Customization</option>
+        <option value="chat">Chat</option>
+        <option value="open-source">Open Source</option>
+      </select>
+      <br /><br />
+
+      <label>
+        What would you like to see improved? (Check all that apply)</label
+      >
+      <br />
+      <input id="design" type="checkbox" name="choice" value="design" />
+      <label for="design">Design</label>
+      <input
+        id="black-friday"
+        type="checkbox"
+        name="choice"
+        value="black-friday"
+      />
+      <label for="black-friday">Black Friday</label>
+      <input id="sale" type="checkbox" name="choice" value="sale" />
+      <label for="sale">Sale</label>
+      <input id="chat" type="checkbox" name="choice" value="chat" />
+      <label for="chat">Chat</label>
+      <br /><br />
+
+      <label for="comments">Any comments or suggestions?</label>
+      <br />
+      <textarea
+        id="comments"
+        name="comments"
+        placeholder="Enter your comment here..."
+      ></textarea>
+      <br />
+      <button id="submit" type="submit">Submit</button>
+    </form>
+  </body>
+</html>
