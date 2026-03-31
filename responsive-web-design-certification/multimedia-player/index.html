@@ -10,12 +10,20 @@
     <h1>Multimedia Player</h1>
     <section>
       <h2>Now Playing: River Flows In You</h2>
-      <audio src="./river_flows_in_you.mp3" controls loop></audio>
+      <audio controls loop aria-label="The piece, written in A major, is the South Korean-British composer’s best-selling song to-date. Structured more like a pop song than a classical piano composition, ‘River Flows in You’ is hugely popular among both pop and classical listeners.">
+	<source src="./river_flows_in_you.mp3" type="audio/mpeg"></source>
+      </audio>
     </section>
     <section>
       <h2></h2>
       <video controls width="600">
-        <source src="./primagen_how_to_learn_a_programming_language.mp4" />
+        <source src="./primagen_how_to_learn_a_programming_language.mp4" type="video/mp4"/>
+        <track
+          src="captions.vtt"
+          kind="captions"
+          srclang="en"
+          label="English"
+        />
       </video>
     </section>
     <section>
@@ -39,105 +47,94 @@
         what that means is going to Advent of code and starting to solve
         problems and why I choose this is a couple reasons uh first off you'll
         notice right here is that this should be in a file you have to read from
-        a file 1:09 system if you don't know file reading 1:11 can fail
-        therefore there's going to be 1:13 error so it gives me a chance to 1:14
-        understand how errors work in the system 1:16 how string processing
-        works in the 1:18 system if while iterator structures 1:22 enums kind of
-        like it just gives me a 1:23 good overview of the language and what 1:25
-        tools are really available for me to be 1:28 able to solve problems in
-        it also gives 1:30 me a chance to look at how they handle 1:31 null and
-        undefined because in Rust it's 1:33 going to be an option whereas in
-        1:35 typescript it's going to be null or 1:36 undefined and so they're
-        like very 1:38 different ways you handle it pattern 1:40 matching if
-        statements right it's just 1:42 it's totally different it gives you kind
-        1:44 of a good overview and every time you 1:46 run into something you
-        you don't 1:47 understand you go you look it up in the 1:49
-        documentation you read about it that way 1:51 you kind of just learn by
-        doing and I 1:53 think that's a very important point I am 1:56 not
-        somebody and I doubt you are either 1:58 someone that can just read
-        through pages 2:00 upon pages of what the language does and 2:03 then
-        boom look at that I can program 2:05 because I'm amazing at it no that's
-        just 2:07 usually not how it works usually we 2:08 learn with our hands
-        more than we learn 2:10 with our eyes and we just go in there 2:11 and
-        we have to kind of program through a 2:13 bunch of problems to pick
-        everything up 2:14 the second reason why I really love 2:16 Advent of
-        code which I strongly suggest 2:18 you do this is that there's a bunch
-        of 2:21 problems here right I only go so far in 2:22 Advent of code okay
-        I don't like to go 2:24 all the way up it gets very tedious but 2:26 as
-        you go through this tons of people 2:28 have either solved the problem
-        or are 2:30 going to solve it with you so you can 2:31 actually like ask
-        questions you can 2:33 bounce answers off of you can code 2:35 review
-        other people's Solutions people 2:37 write blogs about it there's just a
-        lot 2:40 of available information about solving 2:42 these problems
-        specifically in the 2:43 language you're looking for so you'll 2:45 get
-        like just a bunch of experience 2:47 right away so the second one I like
-        to Projects 2:49 do is a websocket server I think this is 2:51 super
-        important and I really really 2:53 enjoy kind of this phase of the
-        learning 2:55 process because I usually build 2:56 something super
-        simple a chat room 2:58 client that takes connections someone 3:00 says
-        join and a string someone says 3:02 leave and the string or they send
-        3:04 message string which is the room of the 3:06 or the name of the
-        room and then the 3:08 message they want to send to everyone in 3:09
-        that room it gives me the ability to 3:11 hold on to sockets how do we
-        do sockets 3:14 what does the API or the standard 3:16 actually provide
-        to you in here versus 3:18 what kind of third-party libraries are 3:20
-        there out there really gives you a good 3:21 idea of what the ecosystem
-        is how 3:24 modules work in the language and the 3:26 best part which is
-        how does it handle 3:27 async is there Primitives around it do 3:29 you
-        just have to use threads like how do 3:31 you actually work with async
-        in the 3:33 language then my third goal is usually 3:35 to build like a
-        larger project something 3:36 that's going to make me exercise a lot
-        3:38 of patterns and try to build something 3:40 that has to maintain
-        itself with lots of 3:42 lines of code because often you'll start 3:44
-        finding weird chinks in the armor how 3:46 how how memory is stored how
-        the you 3:49 know the borrow Checker Works how how 3:51 bad are your
-        ideas around it right it 3:53 has to get to a certain level before you
-        3:55 can really feel the language out and so 3:58 for the third one I
-        really like a good 4:00 project and so for my recent kind of 4:02
-        Endeavors into Zig I've chosen to build 4:04 out an interpreter this
-        interpreter 4:06 right here fantastic book thorsten Paul 4:09 but why I
-        chose that is that I'm 4:10 actually going to build The Interpreter 4:11
-        in typescript then in Rust and then 4:14 finally in Zig so I can
-        actually use the 4:16 experience from languages that I'm good 4:18 at
-        into a language that I am bad at and 4:20 I can try to draw similarities
-        draw 4:22 differences how Zig changes its handling 4:25 of various
-        things so let me actually 4:26 give you kind of a good example of that
-        4:28 if you're familiar with typescript 4:30 building Alexa means you're
-        going to 4:31 come across all these tokens and you 4:32 kind of have to
-        create these little 4:33 tokens so I have to define the token I'm 4:36
-        going to go in here and based on all 4:37 these different conditions I
-        will return 4:39 a token and at the end I also then have 4:41 to check
-        for these more programmatic 4:43 cases because there's not a there's not
-        4:45 a way you can express this all in one 4:47 statement unless if you
-        only use if and 4:49 else's whereas with rust you can do a 4:51 match
-        statement in which I can express 4:53 all these different things simply
-        in the 4:56 statement like look at this hey if it 4:58 matches this
-        statement I will then go 5:00 through my identifier process whereas in
-        5:03 typescript that's just a function that's 5:05 really doing the
-        exact same thing and 5:07 the cool part is Zig actually has 5:09
-        something very very similar to it you'll 5:10 notice right here I can do
-        almost the 5:13 same thing I do in rut so I kind of get 5:14 this cool
-        parts of rust and Zig or as I 5:17 get more of the ease of handling of
-        5:18 typescript so kind of like a really cool 5:21 interesting middle
-        ground language and 5:23 usually by the time I'm done with the 5:25
-        project I have a pretty strong grasp for 5:28 me to really know if I
-        like a language I 5:30 really do just have to build a few 5:32 things
-        and if you don't build a few 5:33 things it's really hard to know how
-        the 5:36 language actually feels a lot of ideas 5:38 seem great on paper
-        but until you build 5:41 something sufficiently large they're 5:43 just
-        ideas they're not actually concrete 5:45 you don't actually know if
-        they're good 5:46 they're just whiteboard and so that's it 5:49 that's
-        how I just go about learning 5:50 languages I'm going to apply this
-        exact 5:52 same principle here soon on Twitch with 5:54 oh camel once I
-        get done building out 5:56 The Interpreter in these three languages 5:57
-        and then I'll see can I still keep 5:59 applying it even in languages
-        that are 6:01 very far outside of the languages I know 6:03 oh camel
-        being closest to rust but a 6:06 very functional very different language
-        6:07 my guess is yes it should not be that 6:10 hard looking forward to
-        it pretty dang 6:12 excited about it oh I actually forgot 6:14 the
-        fourth step the fourth step of 6:15 course is to press the like And 6:17
-        subscribe you know it just works it 6:18 makes you better I don't know
-        why the 6:21 name is the primogen
+        a file system if you don't know file reading can fail therefore there's
+        going to be error so it gives me a chance to understand how errors work
+        in the system how string processing works in the system if while
+        iterator structures enums kind of like it just gives me a good overview
+        of the language and what tools are really available for me to be able to
+        solve problems in it also gives me a chance to look at how they handle
+        null and undefined because in Rust it's going to be an option whereas in
+        typescript it's going to be null or undefined and so they're like very
+        different ways you handle it pattern matching if statements right it's
+        just it's totally different it gives you kind of a good overview and
+        every time you run into something you you don't understand you go you
+        look it up in the documentation you read about it that way you kind of
+        just learn by doing and I think that's a very important point I am not
+        somebody and I doubt you are either someone that can just read through
+        pages upon pages of what the language does and then boom look at that I
+        can program because I'm amazing at it no that's just usually not how it
+        works usually we learn with our hands more than we learn with our eyes
+        and we just go in there and we have to kind of program through a bunch
+        of problems to pick everything up the second reason why I really love
+        Advent of code which I strongly suggest you do this is that there's a
+        bunch of problems here right I only go so far in Advent of code okay I
+        don't like to go all the way up it gets very tedious but as you go
+        through this tons of people have either solved the problem or are going
+        to solve it with you so you can actually like ask questions you can
+        bounce answers off of you can code review other people's Solutions
+        people write blogs about it there's just a lot of available information
+        about solving these problems specifically in the language you're looking
+        for so you'll get like just a bunch of experience right away so the
+        second one I like to Projects do is a websocket server I think this is
+        super important and I really really enjoy kind of this phase of the
+        learning process because I usually build something super simple a chat
+        room client that takes connections someone says join and a string
+        someone says leave and the string or they send message string which is
+        the room of the or the name of the room and then the message they want
+        to send to everyone in that room it gives me the ability to hold on to
+        sockets how do we do sockets what does the API or the standard actually
+        provide to you in here versus what kind of third-party libraries are
+        there out there really gives you a good idea of what the ecosystem is
+        how modules work in the language and the best part which is how does it
+        handle async is there Primitives around it do you just have to use
+        threads like how do you actually work with async in the language then my
+        third goal is usually to build like a larger project something that's
+        going to make me exercise a lot of patterns and try to build something
+        that has to maintain itself with lots of lines of code because often
+        you'll start finding weird chinks in the armor how how how memory is
+        stored how the you know the borrow Checker Works how how bad are your
+        ideas around it right it has to get to a certain level before you can
+        really feel the language out and so for the third one I really like a
+        good project and so for my recent kind of Endeavors into Zig I've chosen
+        to build out an interpreter this interpreter right here fantastic book
+        thorsten Paul but why I chose that is that I'm actually going to build
+        The Interpreter in typescript then in Rust and then finally in Zig so I
+        can actually use the experience from languages that I'm good at into a
+        language that I am bad at and I can try to draw similarities draw
+        differences how Zig changes its handling of various things so let me
+        actually give you kind of a good example of that if you're familiar with
+        typescript building Alexa means you're going to come across all these
+        tokens and you kind of have to create these little tokens so I have to
+        define the token I'm going to go in here and based on all these
+        different conditions I will return a token and at the end I also then
+        have to check for these more programmatic cases because there's not a
+        there's not a way you can express this all in one statement unless if
+        you only use if and else's whereas with rust you can do a match
+        statement in which I can express all these different things simply in
+        the statement like look at this hey if it matches this statement I will
+        then go through my identifier process whereas in typescript that's just
+        a function that's really doing the exact same thing and the cool part is
+        Zig actually has something very very similar to it you'll notice right
+        here I can do almost the same thing I do in rut so I kind of get this
+        cool parts of rust and Zig or as I get more of the ease of handling of
+        typescript so kind of like a really cool interesting middle ground
+        language and usually by the time I'm done with the project I have a
+        pretty strong grasp for me to really know if I like a language I really
+        do just have to build a few things and if you don't build a few things
+        it's really hard to know how the language actually feels a lot of ideas
+        seem great on paper but until you build something sufficiently large
+        they're just ideas they're not actually concrete you don't actually know
+        if they're good they're just whiteboard and so that's it that's how I
+        just go about learning languages I'm going to apply this exact same
+        principle here soon on Twitch with oh camel once I get done building out
+        The Interpreter in these three languages and then I'll see can I still
+        keep applying it even in languages that are very far outside of the
+        languages I know oh camel being closest to rust but a very functional
+        very different language my guess is yes it should not be that hard
+        looking forward to it pretty dang excited about it oh I actually forgot
+        the fourth step the fourth step of course is to press the like And
+        subscribe you know it just works it makes you better I don't know why
+        the name is the primogen
       </p>
     </section>
   </body>
