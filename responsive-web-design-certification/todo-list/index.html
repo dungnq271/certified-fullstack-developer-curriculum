@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Styled To-Do List</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <div>
+      <main>
+        <h1>My To-Do List</h1>
+        <ul class="todo-list">
+          <li class="task">
+            <input type="checkbox" id="task-1" />
+            <label for="task-1">Build tests</label>
+            <ul class="sub-item">
+              <li>
+                <a
+                  class="sub-item-link"
+                  href="https://vitest.dev/guide/"
+                  target="_blank"
+                  >Vitest</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li class="task">
+            <input type="checkbox" id="task-2" />
+            <label for="task-2">Develop the features</label>
+            <ul class="sub-item">
+              <li>
+                <a
+                  class="sub-item-link"
+                  href="https://github.com/"
+                  target="_blank"
+                  >GitHub</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li class="task">
+            <input type="checkbox" id="task-3" />
+            <label for="task-3">Optimize the code</label>
+            <ul class="sub-item">
+              <li>
+                <a
+                  class="sub-item-link"
+                  href="https://legacy.reactjs.org/blog/2018/09/10/introducing-the-react-profiler.html"
+                  target="_blank"
+                  >React Profiler</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li class="task">
+            <input type="checkbox" id="task-4" />
+            <label for="task-4">Repeat</label>
+            <ul class="sub-item">
+              <li>
+                <a
+                  class="sub-item-link"
+                  href="https://en.wikipedia.org/wiki/Iterative_and_incremental_development"
+                  target="_blank"
+                  >Iterate</a
+                >
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </main>
+    </div>
+  </body>
+</html>
