@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Job Application Form</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <form>
+        <h1 class="center">Job Application Form</h1>
+        <label for="full-name">Full Name: </label>
+        <input
+          type="text"
+          id="full-name"
+          value="full-name"
+          required
+          placeholder="Enter your name"
+        />
+        <label for="email">Email: </label>
+        <input
+          type="email"
+          id="email"
+          value="email"
+          required
+          placeholder="Enter your email"
+        />
+        <label for="position">Position: </label>
+        <select name="position" id="position">
+          <option value="" selected>Select a position</option>
+          <option value="developer">Developer</option>
+          <option value="designer">Designer</option>
+          <option value="manager">Manager</option>
+        </select>
+      </form>
+    </div>
+  </body>
+</html>
